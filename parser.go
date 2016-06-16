@@ -1,8 +1,8 @@
 package xmlpath
 
 import (
-	"golang.org/x/net/html"
 	"encoding/xml"
+	"golang.org/x/net/html"
 	"io"
 	"strings"
 )
@@ -41,6 +41,11 @@ const (
 	commentNode
 	procInstNode
 )
+
+// LocalName returns the local name of the node
+func (node *Node) LocalName() string {
+	return node.name.Local
+}
 
 // String returns the string value of node.
 //
